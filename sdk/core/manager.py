@@ -23,7 +23,7 @@ class WorkerManager(object):
 
     async def shutdown(self) -> None:
         self.logger.info("Stopping Worker")
-        self.worker.stop()
+        await self.worker.stop()
 
         self.logger.info("Closing Transport")
         await self.transport.close()

@@ -28,7 +28,7 @@ class LifecycleWorker(BaseWorker):
         self.processed = True
         self.received_topic = topic
         self.received_msg = msg
-        self.stop()
+        await self.stop()
 
     async def tick(self) -> None:
         self.ticked = True
@@ -69,7 +69,7 @@ class ErrorWorker(BaseWorker):
         self.shutdown_called = False
 
     async def process(self, topic: str, msg: Any) -> None:
-        self.stop()
+        await self.stop()
         raise RuntimeError("intentional error")
 
     async def on_error(self, exc: Exception) -> None:

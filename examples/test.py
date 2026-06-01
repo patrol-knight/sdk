@@ -5,9 +5,9 @@ from sdk.transports.mock import MockTransport
 
 
 class TestBase(BaseWorker):
-    input_topic = "/input"
+    input_topic  = "/input"
     output_topic = "/output"
-    state_topic = "/state"
+    state_topic  = "/state"
 
     def __init__(self, name: str = "test_worker") -> None:
         super().__init__(name=name)

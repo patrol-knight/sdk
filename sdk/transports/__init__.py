@@ -1,4 +1,4 @@
-from sdk.transports.mock import MockTransport
+from .mock import MockTransport
 
 __all__ = [
     "MockTransport"
